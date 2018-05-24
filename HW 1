@@ -1,0 +1,16 @@
+
+# Function description: recursive function using karatsuba multiplier where result will be the product of inputs x and y. For example, if x is 1234 and y is 5678, program will parse values into a=12, b=34, c=56, d=78. The rescursive function will further break down the values into smaller parts. n and m in the function serve as length of the digits. 
+# Input requirements: x and y must be positive integers. 
+
+def mult(x,y)
+  n = math.floor(math.log10(x))+1
+  m = math.floor(math.log10(y))+1
+  if n==1 or m==1:
+    result = x*y
+  else
+    a = int(str(x)[:math.ceiling(n/2)])
+    b = int(str(x)[math.floor(n/2):])
+    c = int(str(y)[:math.ceiling(m/2)])
+    d = int(str(y)[math.floor(m/2):])
+    result = 10**((m+n)/2)*mult(a,c) + 10**(n/2)*mult(a,d) + 10**(m/2)*mult(b,c) + mult(b,d)
+  return result
