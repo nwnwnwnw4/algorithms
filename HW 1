@@ -27,7 +27,7 @@ def mult(x,y):
         b = int(str(x)[nhalf:]) #right half of x
         c = int(str(y)[:mhalf]) #left half of y
         d = int(str(y)[mhalf:]) #right half of y
-        print x, " ", y, " ", n, "", nhalf, " ", m, " ", mhalf, " ", a," ", b, " ", c," ", d
+        #print x, " ", y, " ", n, "", nhalf, " ", m, " ", mhalf, " ", a," ", b, " ", c," ", d #line of code use to view variables of the program.
         result = 10**(n+m-mhalf-nhalf)*mult(a,c) + 10**(n-nhalf)*mult(a,d) + 10**(m-mhalf)*mult(b,c) + mult(b,d)
     return result
 
